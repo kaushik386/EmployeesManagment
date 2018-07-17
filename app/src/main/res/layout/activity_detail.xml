@@ -28,13 +28,13 @@
             android:id="@+id/name_label"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="16dp"
             android:text="Name: "
-            android:textAlignment="center"
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="@+id/emp_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/emp_name" />
+            app:layout_constraintTop_toTopOf="@+id/emp_name"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/emp_name"
@@ -42,17 +42,19 @@
             android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="Employee1"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/name_label" />
+            app:layout_constraintHorizontal_bias="0.756"
+            app:layout_constraintStart_toEndOf="@+id/name_label"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/gender_label"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:text="Gender:"
-            android:textAlignment="center"
             android:textSize="30dp"
             app:layout_constraintStart_toStartOf="@+id/name_label"
             app:layout_constraintTop_toBottomOf="@+id/name_label" />
@@ -71,7 +73,6 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:text="Age:"
-            android:textAlignment="center"
             android:textSize="30dp"
             app:layout_constraintStart_toStartOf="@+id/gender_label"
             app:layout_constraintTop_toBottomOf="@+id/gender_label" />
@@ -93,7 +94,7 @@
             android:text="Desgination:"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="@+id/age_label"
-            app:layout_constraintHorizontal_bias="0.222"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/age_label"
             app:layout_constraintTop_toBottomOf="@+id/age_label" />
 
