@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         apiServices = ApiClient.getClient(getApplicationContext()).create(ApiServices.class);
+        setTitle("Employees List");
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         myDatabase = MyDatabase.getInstance(this);
@@ -70,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onError(Throwable e) {
                 e.getCause();
+
+                getDataFromBackup();
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void getDataFromBackup() {
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        AppExecutors.getInstance().diskIO().execute(    new Runnable() {
             @Override
             public void run() {
                 myDatabase.myDao().getAll().observe(MainActivity.this, new Observer<List<Employee>>() {
